@@ -1,0 +1,577 @@
+/* Reset и базовые стили */
+:root {
+  --bg-dark: #0a0e17;
+  --bg-darker: #05080f;
+  --accent-blue: #00c8ff;
+  --accent-orange: #ffb347;
+  --text-light: #e0e0e0;
+  --content-padding: 0 10%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+}
+
+body {
+  background-color: var(--bg-darker);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Хедер */
+header {
+  background-color: var(--bg-dark);
+  padding: 1rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--accent-blue);
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent-orange);
+}
+
+/* Основной контент */
+.main-content {
+  background-color: rgba(20, 25, 40, 0.7);
+  min-height: calc(100vh - 120px);
+  padding: 2rem 10%;
+  box-shadow: 0 0 30px rgba(255, 179, 71, 0.1);
+}
+
+/* Футер */
+footer {
+  background-color: var(--bg-dark);
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--accent-blue);
+}
+
+/* Типографика */
+h1 {
+  font-size: 2.5rem;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--accent-orange);
+  margin: 2rem 0 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Герой-секция */
+.hero {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  max-width: 450px;
+}
+
+/* Инфо-плашки */
+.info-row {
+  display: flex;
+  align-items: center;
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+.info-row.left { flex-direction: row; }
+.info-row.right { flex-direction: row; }
+
+.info-content {
+  flex: 1;
+}
+
+.image-content {
+  flex: 1;
+}
+
+.image-content img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-orange);
+  color: var(--bg-dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--accent-blue);
+  transform: translateY(-2px);
+}
+
+
+
+
+/* Стили для плашек/блоков */
+.content-block {
+  background: rgba(30, 35, 50, 0.7);
+  border-radius: 8px; /* Легкое закругление */
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Обновленные стили для плашек */
+.info-plate {
+  display: flex;
+  background: rgba(40, 45, 60, 0.6);
+  border-radius: 8px;
+  padding: 2rem; /* Увеличил внутренние отступы */
+  margin: 2rem 0;
+  align-items: center;
+  border-left: 3px solid var(--accent-orange);
+  max-width: 100%; /* Ограничение по ширине */
+}
+
+/* Обновленные стили для текстового контейнера */
+.text-content {
+  flex: 1;
+  padding: 0 2rem;
+  min-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Равномерное распределение пространства */
+  height: 100%; /* Занимает всю высоту плашки */
+}
+
+/* Заголовок и текст */
+.text-content h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  flex-grow: 1; /* Занимает все доступное пространство */
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  line-height: 1.6;
+}
+
+/* Кнопка */
+.btn-container {
+  margin-top: auto; /* Прижимает к низу */
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-orange);
+  color: var(--bg-dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+  width: auto; /* Фиксированная ширина по содержимому */
+  min-width: 150px; /* Минимальная ширина */
+  text-align: center; /* Центрируем текст */
+}
+
+/* Контейнер изображения */
+.image-content {
+  flex: 1;
+  min-width: 40%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: flex-end; /* Выравнивание по нижнему краю */
+  height: 100%;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  align-self: flex-end; /* Гарантирует выравнивание по низу */
+}
+
+
+
+/* Стили для страницы "Об игре" */
+.about-section {
+  margin-bottom: 3rem;
+}
+
+.about-text {
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.image-float {
+  max-width: 45%;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+}
+
+.image-float.left {
+  float: left;
+  margin-left: 0;
+}
+
+.image-float.right {
+  float: right;
+  margin-right: 0;
+}
+
+.image-caption {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--accent-blue);
+}
+
+.image-pair {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  gap: 1.5rem;
+}
+
+.image-pair img {
+  width: 48%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* Дополнения для страницы "О проекте" */
+.project-section {
+  margin-bottom: 3rem;
+}
+
+.project-leader {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: flex-start;
+}
+
+.leader-photo {
+  width: 200px;
+  height: 200px; /* Добавляем фиксированную высоту */
+  border-radius: 50%; /* Делаем круглую форму */
+  border: 3px solid var(--accent-orange); /* Увеличиваем толщину рамки */
+  object-fit: cover; /* Чтобы изображение заполняло круг */
+  object-position: center; /* Центрируем изображение */
+  box-shadow: 0 0 10px rgba(255, 179, 71, 0.3); /* Добавляем мягкое свечение */
+}
+
+.leader-info {
+  flex: 1;
+}
+
+.leader-name {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.leader-position {
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.project-timeline {
+  margin: 3rem 0;
+}
+
+.project-phase {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--accent-blue);
+}
+
+.gantt-chart {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.1);
+}
+
+
+/* Дополнения для страницы "Команда" */
+.team-section {
+  margin-bottom: 3rem;
+}
+
+.team-section > p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  opacity: 0.9;
+}
+
+.team-category {
+  margin-bottom: 3rem;
+}
+
+.team-category h2 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--accent-blue);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.team-card {
+  background: rgba(40, 45, 60, 0.6);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 3px solid var(--accent-orange);
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 200, 255, 0.2);
+}
+
+.team-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-orange);
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-info {
+  flex: 1;
+}
+
+.team-name {
+  font-size: 1.2rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.3rem;
+}
+
+.team-role {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+
+/* Стили для страницы "Ресурсы" */
+.resources-section {
+  margin-bottom: 3rem;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.resource-card {
+  background: rgba(40, 45, 60, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 3px solid var(--accent-orange);
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 200, 255, 0.2);
+}
+
+.resource-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.resource-info {
+  padding: 1.5rem;
+}
+
+.audio-section {
+  background: rgba(40, 45, 60, 0.6);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-left: 3px solid var(--accent-orange);
+}
+
+.audio-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.audio-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  border: 2px solid var(--accent-orange);
+}
+
+.audio-tracks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.audio-player {
+  width: 100%;
+}
+
+/* Обновленные стили для блога разработки */
+.blog-posts-horizontal {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.blog-card-horizontal {
+  min-width: 250px;
+  background: rgba(40, 45, 60, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  border-left: 3px solid var(--accent-orange);
+  flex: 1;
+}
+
+.blog-card-horizontal:hover {
+  transform: translateY(-5px);
+}
+
+.blog-image-horizontal {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.blog-content-horizontal {
+  padding: 1rem;
+}
+
+.blog-date-horizontal {
+  font-size: 0.8rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.blog-title-horizontal {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+
+
+.external-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-orange);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.external-link:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .resource-grid,
+  .audio-tracks,
+  .blog-posts {
+    grid-template-columns: 1fr;
+  }
+  
+  .audio-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .audio-header img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+}
+
+
+
+
+
